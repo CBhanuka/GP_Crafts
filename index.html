@@ -1,0 +1,1970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>EverBloom - Pipe Flower Bouquets That Never Fade</title>
+ <!-- Bootstrap CSS -->
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
+rel="stylesheet">
+ <!-- Tailwind CSS -->
+ <script src="https://cdn.tailwindcss.com"></script>
+ <!-- Font Awesome for icons -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ <!-- Google Fonts -->
+ <link 
+href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" 
+rel="stylesheet">
+ 
+ <style>
+ :root {
+ --primary-pink: #ff9eb5;
+ --soft-peach: #ffd1ba;
+ --lavender: #d8c3ff;
+ --rose-gold: #c08497;
+ --soft-green: #c1e1c1;
+ --coral: #ff7b7b;
+ --gp-crafts-blue: #2a6fa8;
+ --gp-crafts-teal: #17a2b8;
+ }
+ 
+ * {
+ font-family: 'Poppins', sans-serif;
+ }
+ 
+ .dancing-font {
+ font-family: 'Dancing Script', cursive;
+ }
+ 
+ .playfair-font {
+ font-family: 'Playfair Display', serif;
+ }
+ 
+ body {
+ background-color: #fffcf9;
+ overflow-x: hidden;
+ transition: background-color 0.5s ease;
+ }
+ 
+ /* Dark Valentine Theme */
+ body.valentine-theme {
+ background-color: #1a0b1f;
+ color: #f0e6f6;
+ }
+ 
+ body.valentine-theme .hero-bg {
+ background: linear-gradient(135deg, rgba(26, 11, 31, 0.3) 0%, rgba(58, 11, 47, 0.95) 
+100%),
+ url('https://www.pixelstalk.net/wp-content/uploads/images2/Beautiful-Rose-Wallpaper-Desktop.jpg');
+ background-size: cover;
+ background-position: center 30%;
+ background-attachment: fixed;
+ }
+ 
+ body.valentine-theme .hero-content {
+ background: rgba(42, 15, 42, 0.9);
+ border: 1px solid rgba(255, 105, 180, 0.3);
+ }
+ 
+ body.valentine-theme .occasion-section {
+ background: linear-gradient(135deg, #2a152a, #1f0f2a);
+ border: 1px solid rgba(255, 105, 180, 0.2);
+ }
+ 
+ body.valentine-theme .bouquet-card {
+ background: #2a152a;
+ border: 1px solid rgba(255, 105, 180, 0.2);
+ color: #f0e6f6;
+ }
+ 
+ body.valentine-theme .bouquet-card .text-muted {
+ color: #c9a8d9 !important;
+ }
+ 
+ body.valentine-theme .testimonial-card {
+ background: linear-gradient(135deg, #2a152a, #1f0f2a);
+ border: 1px solid rgba(255, 105, 180, 0.2);
+ }
+ 
+ body.valentine-theme footer {
+ background: linear-gradient(135deg, #0f050f, #1a0a1a);
+ }
+ 
+ body.valentine-theme .custom-bouquet-builder {
+ background: linear-gradient(135deg, #2a152a, #1f0f2a);
+ border: 1px solid rgba(255, 105, 180, 0.2);
+ }
+ 
+ body.valentine-theme .custom-bouquet-builder .card {
+ background: #1f0f2a;
+ border: 1px solid rgba(255, 105, 180, 0.2);
+ color: #f0e6f6;
+ }
+
+ /* Crisp Hero Section */
+ .hero-bg {
+ background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 240, 245, 0.9) 
+100%),
+ url('https://wallpapercave.com/wp/wp2648943.jpg');
+ background-size: cover;
+ background-position: center 30%;
+ background-attachment: fixed;
+ min-height: 95vh;
+ display: flex;
+ align-items: center;
+ position: relative;
+ transition: all 0.5s ease;
+ }
+ 
+ /* Hero decorative elements */
+ .hero-decoration {
+ position: absolute;
+ width: 300px;
+ height: 300px;
+ border-radius: 50%;
+ background: radial-gradient(circle, rgba(255,158,181,0.1) 0%, rgba(255,158,181,0) 70%);
+ z-index: 0;
+ }
+ 
+ .hero-decoration-1 {
+ top: 10%;
+ left: 10%;
+ }
+ 
+ .hero-decoration-2 {
+ bottom: 10%;
+ right: 10%;
+ }
+ 
+ .hero-content {
+ position: relative;
+ z-index: 2;
+ background: rgba(255, 255, 255, 0.85);
+ backdrop-filter: blur(1px);
+ border-radius: 30px;
+ padding: 50px 40px;
+ box-shadow: 0 20px 60px rgba(192, 132, 151, 0.1);
+ border: 1px solid rgba(255, 255, 255, 0.2);
+ transition: all 0.5s ease;
+ }
+ 
+ /* Floating Petals Animation */
+ .petal {
+ position: fixed;
+ width: 20px;
+ height: 20px;
+ background: transparent;
+ pointer-events: none;
+ z-index: 9999;
+ opacity: 0.7;
+ background-size: contain;
+ background-repeat: no-repeat;
+ }
+
+ /* Card hover effects */
+ .bouquet-card {
+ transition: all 0.3s ease;
+ border-radius: 20px;
+ overflow: hidden;
+ background: white;
+ box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+ border: 1px solid rgba(255, 255, 255, 0.8);
+ }
+ 
+ .bouquet-card:hover {
+ transform: translateY(-10px);
+ box-shadow: 0 25px 50px rgba(192, 132, 151, 0.15);
+ border: 1px solid rgba(255, 158, 181, 0.3);
+ }
+ 
+ .bouquet-img {
+ height: 250px;
+ width: 100%;
+ object-fit: cover;
+ transition: transform 0.5s ease;
+ }
+ 
+ .bouquet-card:hover .bouquet-img {
+ transform: scale(1.08);
+ }
+ 
+ /* Original and Discounted Price */
+ .original-price {
+ text-decoration: line-through;
+ color: #999;
+ font-size: 0.9em;
+ margin-right: 5px;
+ }
+ 
+ .discounted-price {
+ color: #e63946;
+ font-weight: bold;
+ font-size: 1.2em;
+ }
+ 
+ .discount-badge {
+ position: absolute;
+ top: 15px;
+ left: 15px;
+ background: #e63946;
+ color: white;
+ padding: 5px 10px;
+ border-radius: 20px;
+ font-size: 0.8em;
+ font-weight: bold;
+ z-index: 2;
+ }
+ 
+ /* Floating cart */
+ .cart-container {
+ position: fixed;
+ bottom: 30px;
+ right: 30px;
+ z-index: 1000;
+ width: 380px;
+ max-width: 90vw;
+ box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+ border-radius: 25px;
+ background: white;
+ max-height: 80vh;
+ overflow-y: auto;
+ border: 1px solid rgba(255, 158, 181, 0.2);
+ transition: all 0.5s ease;
+ }
+ 
+ body.valentine-theme .cart-container {
+ background: #2a152a;
+ border: 1px solid rgba(255, 105, 180, 0.3);
+ color: #f0e6f6;
+ }
+ 
+ .cart-toggle {
+ width: 70px;
+ height: 70px;
+ border-radius: 50%;
+ background: linear-gradient(135deg, var(--rose-gold), var(--coral));
+ color: white;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-size: 26px;
+ position: fixed;
+ bottom: 30px;
+ right: 30px;
+ z-index: 999;
+ box-shadow: 0 10px 25px rgba(192, 132, 151, 0.4);
+ cursor: pointer;
+ transition: all 0.3s ease;
+ }
+ 
+ .cart-toggle:hover {
+ transform: scale(1.1);
+ box-shadow: 0 15px 30px rgba(192, 132, 151, 0.5);
+ }
+ 
+ /* Theme Toggle Button */
+ .theme-toggle {
+ position: fixed;
+ top: 20px;
+ right: 20px;
+ z-index: 1000;
+ width: 50px;
+ height: 50px;
+ border-radius: 50%;
+ background: linear-gradient(135deg, #ff7b9c, #e63946);
+ color: white;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-size: 20px;
+ box-shadow: 0 5px 15px rgba(230, 57, 70, 0.3);
+ cursor: pointer;
+ transition: all 0.3s ease;
+ }
+ 
+ .theme-toggle:hover {
+ transform: scale(1.1);
+ box-shadow: 0 8px 20px rgba(230, 57, 70, 0.4);
+ }
+
+ /* Special offers section - Crisp and clear */
+ .offer-card {
+ border-radius: 20px;
+ overflow: hidden;
+ position: relative;
+ box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+ transition: all 0.3s ease;
+ border: 2px solid transparent;
+ }
+ 
+ .offer-card:hover {
+ transform: translateY(-5px);
+ box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+ }
+ 
+ .offer-1 {
+ background: linear-gradient(135deg, #ff9eb5, #ff7b9c);
+ }
+ 
+ .offer-2 {
+ background: linear-gradient(135deg, #d8c3ff, #b79aff);
+ }
+ 
+ .offer-3 {
+ background: linear-gradient(135deg, #c1e1c1, #9bd49b);
+ }
+ 
+ @keyframes subtleGlow {
+ 0% { box-shadow: 0 5px 15px rgba(255, 123, 156, 0.4); }
+ 50% { box-shadow: 0 5px 20px rgba(255, 123, 156, 0.7); }
+ 100% { box-shadow: 0 5px 15px rgba(255, 123, 156, 0.4); }
+ }
+ 
+ .glow-animation {
+ animation: subtleGlow 3s infinite;
+ }
+ 
+ /* Gallery hover effect */
+ .gallery-item {
+ border-radius: 15px;
+ overflow: hidden;
+ height: 250px;
+ box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+ }
+ 
+ .gallery-img {
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ transition: transform 0.5s ease;
+ }
+ 
+ .gallery-item:hover .gallery-img {
+ transform: scale(1.1);
+ }
+ 
+ /* Testimonial cards */
+ .testimonial-card {
+ background: linear-gradient(135deg, #fff9fb, #fffdf9);
+ border-radius: 20px;
+ box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+ border: 1px solid rgba(255, 158, 181, 0.2);
+ position: relative;
+ }
+ 
+ .testimonial-card:before {
+ content: '"';
+ position: absolute;
+ top: 20px;
+ left: 20px;
+ font-size: 60px;
+ font-family: 'Playfair Display', serif;
+ color: rgba(192, 132, 151, 0.2);
+ line-height: 1;
+ }
+ 
+ /* Section backgrounds */
+ .occasion-section {
+ background: linear-gradient(135deg, #fffbfd, #fffefb);
+ border-radius: 30px;
+ padding: 40px;
+ box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+ border: 1px solid rgba(255, 158, 181, 0.1);
+ transition: all 0.5s ease;
+ }
+ 
+ /* Section headers */
+ .section-header {
+ position: relative;
+ display: inline-block;
+ margin-bottom: 50px;
+ }
+ 
+ .section-header:after {
+ content: '';
+ position: absolute;
+ bottom: -15px;
+ left: 50%;
+ transform: translateX(-50%);
+ width: 80px;
+ height: 4px;
+ background: linear-gradient(90deg, var(--primary-pink), var(--coral));
+ border-radius: 2px;
+ }
+ 
+ /* Smooth scroll */
+ html {
+ scroll-behavior: smooth;
+ }
+ 
+ /* Button styles */
+ .btn-rose {
+ background: linear-gradient(135deg, var(--rose-gold), var(--coral));
+ color: white;
+ border: none;
+ transition: all 0.3s ease;
+ }
+ 
+ .btn-rose:hover {
+ transform: translateY(-3px);
+ box-shadow: 0 10px 20px rgba(192, 132, 151, 0.3);
+ color: white;
+ }
+ 
+ .btn-whatsapp {
+ background: linear-gradient(135deg, #25D366, #128C7E);
+ color: white;
+ border: none;
+ transition: all 0.3s ease;
+ }
+ 
+ .btn-whatsapp:hover {
+ transform: translateY(-3px);
+ box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+ color: white;
+ }
+ 
+ /* Mobile responsiveness adjustments */
+ @media (max-width: 768px) {
+ .hero-bg {
+ min-height: 85vh;
+ background-attachment: scroll;
+ }
+ 
+ .hero-content {
+ padding: 30px 20px;
+ margin: 0 15px;
+ }
+ 
+ .cart-container {
+ width: 95vw;
+ right: 2.5vw;
+ bottom: 20px;
+ }
+ 
+ .cart-toggle {
+ width: 60px;
+ height: 60px;
+ font-size: 22px;
+ bottom: 20px;
+ right: 20px;
+ }
+ 
+ .theme-toggle {
+ top: 10px;
+ right: 10px;
+ width: 45px;
+ height: 45px;
+ font-size: 18px;
+ }
+ 
+ .occasion-section {
+ padding: 25px 15px;
+ border-radius: 20px;
+ margin: 0 10px;
+ }
+ 
+ .section-header {
+ margin-bottom: 30px;
+ }
+ }
+
+ /* Custom Bouquet Builder Section */
+ .custom-bouquet-builder {
+ background: linear-gradient(135deg, #fff5f9 0%, #fff0f7 100%);
+ border-radius: 30px;
+ margin: 4rem auto;
+ padding: 3rem 1rem;
+ box-shadow: 0 15px 35px rgba(255, 105, 180, 0.1);
+ border: 1px solid rgba(255, 105, 180, 0.1);
+ transition: all 0.5s ease;
+ }
+
+ .custom-bouquet-builder h3 {
+ color: var(--rose-gold);
+ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+ position: relative;
+ display: inline-block;
+ }
+
+ .custom-bouquet-builder h3:after {
+ content: "";
+ position: absolute;
+ bottom: -10px;
+ left: 50%;
+ transform: translateX(-50%);
+ width: 100px;
+ height: 3px;
+ background: linear-gradient(90deg, var(--rose-gold), var(--coral));
+ border-radius: 2px;
+ }
+
+ /* Card Styles for Builder */
+ .custom-bouquet-builder .card {
+ border: none;
+ border-radius: 20px;
+ box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+ transition: all 0.3s ease;
+ height: 100%;
+ background: white;
+ overflow: hidden;
+ }
+
+ .custom-bouquet-builder .card:hover {
+ transform: translateY(-5px);
+ box-shadow: 0 20px 40px rgba(255, 105, 180, 0.15);
+ }
+
+ .custom-bouquet-builder .card-body {
+ padding: 2rem;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ }
+
+ .custom-bouquet-builder .card h5 {
+ color: var(--rose-gold);
+ font-weight: 600;
+ margin-bottom: 1.5rem;
+ font-size: 1.4rem;
+ position: relative;
+ padding-bottom: 0.5rem;
+ }
+
+ .custom-bouquet-builder .card h5:after {
+ content: "";
+ position: absolute;
+ bottom: 0;
+ left: 50%;
+ transform: translateX(-50%);
+ width: 40px;
+ height: 2px;
+ background: var(--coral);
+ }
+
+ /* Flower Options */
+ .flower-options {
+ display: flex;
+ flex-direction: column;
+ gap: 1rem;
+ margin-top: 1rem;
+ }
+
+ .flower-options .btn-outline-primary {
+ border: 2px solid var(--rose-gold);
+ color: var(--rose-gold);
+ background: transparent;
+ border-radius: 50px;
+ padding: 0.75rem 1.5rem;
+ font-weight: 500;
+ transition: all 0.3s ease;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 0.5rem;
+ font-size: 1.1rem;
+ }
+
+ .flower-options .btn-outline-primary:hover {
+ background: var(--rose-gold);
+ color: white;
+ transform: translateY(-3px);
+ box-shadow: 0 10px 20px rgba(192, 132, 151, 0.3);
+ }
+
+ .flower-options .btn-outline-primary.active {
+ background: var(--rose-gold);
+ color: white;
+ border-color: var(--rose-gold);
+ box-shadow: 0 10px 20px rgba(192, 132, 151, 0.3);
+ }
+
+ /* Color Options */
+ .color-options {
+ display: flex;
+ justify-content: center;
+ gap: 1rem;
+ margin-top: 1.5rem;
+ flex-wrap: wrap;
+ }
+
+ .color-btn {
+ width: 50px;
+ height: 50px;
+ border-radius: 50%;
+ border: 3px solid transparent;
+ cursor: pointer;
+ transition: all 0.3s ease;
+ position: relative;
+ box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+ }
+
+ .color-btn:hover {
+ transform: scale(1.15);
+ box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+ }
+
+ .color-btn.active {
+ border-color: var(--rose-gold);
+ box-shadow: 0 0 0 3px rgba(192, 132, 151, 0.3), 0 5px 15px rgba(0, 0, 0, 0.2);
+ transform: scale(1.15);
+ }
+
+ .color-btn::after {
+ content: "✓";
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ color: white;
+ font-weight: bold;
+ font-size: 1.3rem;
+ opacity: 0;
+ transition: opacity 0.3s ease;
+ text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+ }
+
+ .color-btn.active::after {
+ opacity: 1;
+ }
+
+ /* Custom Bouquet Preview */
+ #custom-bouquet-preview {
+ min-height: 180px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ background: linear-gradient(135deg, #fff5f9, #ffe9f0);
+ border-radius: 15px;
+ padding: 2rem;
+ margin: 1.5rem 0;
+ border: 2px dashed var(--rose-gold);
+ position: relative;
+ overflow: hidden;
+ transition: all 0.3s ease;
+ }
+
+ #custom-bouquet-preview.has-selection {
+ background: linear-gradient(135deg, #fff, #fff5f9);
+ border-style: solid;
+ box-shadow: 0 10px 25px rgba(255, 105, 180, 0.1);
+ }
+
+ .bouquet-icon {
+ font-size: 4rem;
+ margin-bottom: 1rem;
+ transition: all 0.5s ease;
+ animation: float 3s ease-in-out infinite;
+ }
+
+ @keyframes float {
+ 0%, 100% { transform: translateY(0); }
+ 50% { transform: translateY(-10px); }
+ }
+
+ .bouquet-name {
+ font-size: 1.3rem;
+ font-weight: 600;
+ color: var(--rose-gold);
+ margin-bottom: 0.5rem;
+ }
+
+ .bouquet-details {
+ font-size: 0.9rem;
+ color: #666;
+ text-align: center;
+ }
+
+ .bouquet-price {
+ font-size: 1.5rem;
+ font-weight: bold;
+ color: var(--coral);
+ margin-top: 0.5rem;
+ }
+
+ /* Add to Cart Button */
+ #add-custom-to-cart {
+ background: linear-gradient(135deg, var(--rose-gold), var(--coral));
+ color: white;
+ border: none;
+ border-radius: 50px;
+ padding: 1rem 2rem;
+ font-size: 1.1rem;
+ font-weight: 600;
+ transition: all 0.3s ease;
+ width: 100%;
+ margin-top: 1.5rem;
+ box-shadow: 0 10px 20px rgba(192, 132, 151, 0.3);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 0.5rem;
+ }
+
+ #add-custom-to-cart:hover:not(:disabled) {
+ transform: translateY(-3px);
+ box-shadow: 0 15px 30px rgba(192, 132, 151, 0.4);
+ background: linear-gradient(135deg, var(--coral), var(--rose-gold));
+ }
+
+ #add-custom-to-cart:active:not(:disabled) {
+ transform: translateY(-1px);
+ }
+
+ #add-custom-to-cart:disabled {
+ opacity: 0.5;
+ cursor: not-allowed;
+ }
+
+ #add-custom-to-cart i {
+ font-size: 1.2rem;
+ }
+
+ /* Empty State for Preview */
+ .preview-empty-state {
+ color: #999;
+ font-style: italic;
+ text-align: center;
+ }
+
+ /* Responsive Design */
+ @media (max-width: 768px) {
+ .custom-bouquet-builder {
+ padding: 2rem 1rem;
+ margin: 2rem auto;
+ border-radius: 20px;
+ }
+ 
+ .custom-bouquet-builder h3 {
+ font-size: 2rem;
+ }
+ 
+ .custom-bouquet-builder .card {
+ margin-bottom: 1.5rem;
+ }
+ 
+ .custom-bouquet-builder .card-body {
+ padding: 1.5rem;
+ }
+ 
+ .flower-options .btn-outline-primary {
+ padding: 0.6rem 1rem;
+ font-size: 1rem;
+ }
+ 
+ .color-btn {
+ width: 45px;
+ height: 45px;
+ }
+ 
+ .bouquet-icon {
+ font-size: 3rem;
+ }
+ 
+ #add-custom-to-cart {
+ padding: 0.8rem 1.5rem;
+ font-size: 1rem;
+ }
+ }
+
+ @media (max-width: 576px) {
+ .custom-bouquet-builder h3 {
+ font-size: 1.8rem;
+ }
+ 
+ .flower-options {
+ gap: 0.5rem;
+ }
+ 
+ .color-options {
+ gap: 0.5rem;
+ }
+ 
+ .color-btn {
+ width: 40px;
+ height: 40px;
+ }
+ 
+ .color-btn::after {
+ font-size: 1rem;
+ }
+ }
+
+ /* Animation for selection */
+ @keyframes selectPulse {
+ 0% { transform: scale(1); }
+ 50% { transform: scale(1.05); }
+ 100% { transform: scale(1); }
+ }
+
+ .btn-outline-primary.active,
+ .color-btn.active {
+ animation: selectPulse 0.5s ease;
+ }
+ </style>
+</head>
+<body>
+ <!-- Theme Toggle Button -->
+ <div class="theme-toggle" id="theme-toggle" title="Switch to Valentine Theme">
+ <i class="fas fa-heart"></i>
+ </div>
+ 
+ <!-- Hero Section -->
+ <section class="hero-bg text-center">
+ <div class="hero-decoration hero-decoration-1"></div>
+ <div class="hero-decoration hero-decoration-2"></div>
+ 
+ <div class="container mx-auto px-4 py-16">
+ <div class="hero-content mx-auto" style="max-width: 900px;">
+ <h1 class="dancing-font display-1 fw-bold mb-4" style="color: var(--rose-gold);">EverBloom</h1>
+ <p class="playfair-font fs-2 mb-4" style="color: #5a3d3d;">Flowers That Never Fade</p>
+ <p class="lead fs-5 mb-5 mx-auto" style="max-width: 700px; color: #666;">Handcrafted pipe flower bouquets that capture eternal beauty. Perfect for every special moment in your life. Each bouquet is a timeless gift of love.</p>
+ <div class="d-flex flex-wrap justify-content-center gap-4">
+ <a href="#occasions" class="btn btn-rose btn-lg px-5 py-3 fs-5">
+ <i class="fas fa-gift me-2"></i> Shop Now
+ </a>
+ <a href="#order-cart" id="whatsapp-hero" class="btn btn-whatsapp btn-lg px-5 py-3 fs-5">
+ <i class="fab fa-whatsapp me-2"></i> Order via WhatsApp
+ </a>
+ </div>
+ 
+ <!-- Feature highlights -->
+ <div class="row mt-5 pt-4">
+ <div class="col-md-4">
+ <div class="d-flex align-items-center justify-content-center mb-3">
+ <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px; background-color: rgba(255, 158, 181, 0.2);">
+ <i class="fas fa-award fs-4" style="color: var(--rose-gold);"></i>
+ </div>
+ <h6 class="mb-0 fw-bold">Premium Quality</h6>
+ </div>
+ </div>
+ <div class="col-md-4">
+ <div class="d-flex align-items-center justify-content-center mb-3">
+ <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px; background-color: rgba(255, 158, 181, 0.2);">
+ <i class="fas fa-shipping-fast fs-4" style="color: var(--rose-gold);"></i>
+ </div>
+ <h6 class="mb-0 fw-bold">Free Delivery</h6>
+ </div>
+ </div>
+ <div class="col-md-4">
+ <div class="d-flex align-items-center justify-content-center mb-3">
+ <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px; background-color: rgba(255, 158, 181, 0.2);">
+ <i class="fas fa-heart fs-4" style="color: var(--rose-gold);"></i>
+ </div>
+ <h6 class="mb-0 fw-bold">Handcrafted With Love</h6>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Special Offers Section - Clear and Crisp -->
+ <section class="py-5 my-5">
+ <div class="container mx-auto px-4">
+ <h2 class="text-center section-header dancing-font display-4" style="color: var(--rose-gold);">Special Offers</h2>
+ 
+ <div class="row g-4">
+ <div class="col-lg-4 col-md-6">
+ <div class="offer-card offer-1 glow-animation text-white p-5 h-100">
+ <div class="position-relative z-2">
+ <div class="d-flex align-items-center mb-3">
+ <i class="fas fa-heart fs-1 me-3"></i>
+ <h3 class="fw-bold mb-0">Valentine Special</h3>
+ </div>
+ <div class="mb-3">
+ <span class="fs-6">UP TO</span>
+ <p class="display-4 fw-bold mb-1">20% OFF</p>
+ <p class="mb-0">On all romantic bouquets</p>
+ </div>
+ <div class="mt-4">
+ <span class="badge bg-white text-dark p-2">Limited Time Offer</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="col-lg-4 col-md-6">
+ <div class="offer-card offer-2 text-white p-5 h-100">
+ <div class="position-relative z-2">
+ <div class="d-flex align-items-center mb-3">
+ <i class="fas fa-gift fs-1 me-3"></i>
+ <h3 class="fw-bold mb-0">Free Love Card</h3>
+ </div>
+ <div class="mb-3">
+ <p class="display-5 fw-bold mb-1">With Every Bouquet</p>
+ <p class="mb-0">Personalized message included</p>
+ </div>
+ <div class="mt-4">
+ <span class="badge bg-white text-dark p-2">Complimentary</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="col-lg-4 col-md-12">
+ <div class="offer-card offer-3 text-white p-5 h-100">
+ <div class="position-relative z-2">
+ <div class="d-flex align-items-center mb-3">
+ <i class="fas fa-star fs-1 me-3"></i>
+ <h3 class="fw-bold mb-0">Mother's Day Combo</h3>
+ </div>
+ <div class="mb-3">
+ <p class="display-5 fw-bold mb-1">$49.99</p>
+ <p class="mb-2">Bouquet + Chocolate Box</p>
+ <p class="small mb-0">Special price (Save $15)</p>
+ </div>
+ <div class="mt-4">
+ <span class="badge bg-white text-dark p-2">Best Seller</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Occasions Sections -->
+ <section id="occasions" class="container mx-auto px-4 py-5">
+ <h2 class="text-center section-header dancing-font display-4" style="color: var(--rose-gold);">For Every Special Occasion</h2>
+ 
+ <!-- Valentine's Day -->
+ <div class="occasion-section mb-5">
+ <div class="d-flex align-items-center mb-4">
+ <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 70px; height: 70px; background: linear-gradient(135deg, #ff7b9c, #ff9eb5);">
+ <i class="fas fa-heart fs-2 text-white"></i>
+ </div>
+ <h3 class="playfair-font display-5 fw-bold" style="color: #ff7b9c;">Valentine's Day</h3>
+ </div>
+ <p class="lead mb-4" style="color: #666;">Express your eternal love with our specially crafted romantic bouquets that symbolize passion and devotion.</p>
+ 
+ <div class="row g-4" id="valentine-bouquets">
+ <!-- Bouquets will be added by JavaScript -->
+ </div>
+ </div>
+ 
+ <!-- Birthdays -->
+ <div class="occasion-section mb-5">
+ <div class="d-flex align-items-center mb-4">
+ <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 70px; height: 70px; background: linear-gradient(135deg, #ffb347, #ffcc33);">
+ <i class="fas fa-birthday-cake fs-2 text-white"></i>
+ </div>
+ <h3 class="playfair-font display-5 fw-bold" style="color: #ffb347;">Birthdays</h3>
+ </div>
+ <p class="lead mb-4" style="color: #666;">Celebrate their special day with vibrant, colorful bouquets that bring joy and last forever as a memory.</p>
+ 
+ <div class="row g-4" id="birthday-bouquets">
+ <!-- Bouquets will be added by JavaScript -->
+ </div>
+ </div>
+ 
+ <!-- Anniversaries -->
+ <div class="occasion-section mb-5">
+ <div class="d-flex align-items-center mb-4">
+ <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 70px; height: 70px; background: linear-gradient(135deg, #c08497, #a76d8a);">
+ <i class="fas fa-gem fs-2 text-white"></i>
+ </div>
+ <h3 class="playfair-font display-5 fw-bold" style="color: #c08497;">Anniversaries</h3>
+ </div>
+ <p class="lead mb-4" style="color: #666;">Mark another year of love with elegant bouquets that symbolize lasting commitment and beautiful memories.</p>
+ 
+ <div class="row g-4" id="anniversary-bouquets">
+ <!-- Bouquets will be added by JavaScript -->
+ </div>
+ </div>
+ 
+ <!-- Mother's Day -->
+ <div class="occasion-section mb-5">
+ <div class="d-flex align-items-center mb-4">
+ <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 70px; height: 70px; background: linear-gradient(135deg, #ff6b8b, #ff9eb5);">
+ <i class="fas fa-hands-helping fs-2 text-white"></i>
+ </div>
+ <h3 class="playfair-font display-5 fw-bold" style="color: #ff6b8b;">Mother's Day</h3>
+ </div>
+ <p class="lead mb-4" style="color: #666;">Show your appreciation to the most special woman in your life with our heartfelt Mother's Day collection.</p>
+ 
+ <div class="row g-4" id="mothersday-bouquets">
+ <!-- Bouquets will be added by JavaScript -->
+ </div>
+ </div>
+ 
+ <!-- Surprise Gifts -->
+ <div class="occasion-section mb-5">
+ <div class="d-flex align-items-center mb-4">
+ <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 70px; height: 70px; background: linear-gradient(135deg, #a78bfa, #c084fc);">
+ <i class="fas fa-gift fs-2 text-white"></i>
+ </div>
+ <h3 class="playfair-font display-5 fw-bold" style="color: #a78bfa;">Surprise Gifts</h3>
+ </div>
+ <p class="lead mb-4" style="color: #666;">Unexpected floral surprises to brighten someone's day, because every day is a good day to show you care.</p>
+ 
+ <div class="row g-4" id="surprise-bouquets">
+ <!-- Bouquets will be added by JavaScript -->
+ </div>
+ </div>
+ </section>
+
+ <!-- Build Your Own Bouquet Section - FIXED -->
+ <section class="custom-bouquet-builder py-5">
+ <div class="container">
+ <h3 class="text-center section-header dancing-font display-4 mb-5">Build Your Custom Bouquet</h3>
+ <div class="row">
+ <!-- Step 1: Choose Flowers -->
+ <div class="col-md-4">
+ <div class="card text-center">
+ <div class="card-body">
+ <h5>🌸 Choose Flowers</h5>
+ <div class="flower-options">
+ <button class="btn btn-outline-primary" data-flower="rose" data-emoji="🌹">
+ 🌹 Rose
+ </button>
+ <button class="btn btn-outline-primary" data-flower="lily" data-emoji="🌺">
+ 🌺 Lily
+ </button>
+ <button class="btn btn-outline-primary" data-flower="tulip" data-emoji="🌷">
+ 🌷 Tulip
+ </button>
+ <button class="btn btn-outline-primary" data-flower="sunflower" data-emoji="🌻">
+ 🌻 Sunflower
+ </button>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Step 2: Choose Color Theme -->
+ <div class="col-md-4">
+ <div class="card text-center">
+ <div class="card-body">
+ <h5>🎨 Choose Color</h5>
+ <div class="color-options">
+ <button class="color-btn" style="background: linear-gradient(135deg, #ff6b8b, #ff9eb5);" data-color="pink" data-color-name="Pink" title="Romantic Pink"></button>
+ <button class="color-btn" style="background: linear-gradient(135deg, #dc2626, #ef4444);" data-color="red" data-color-name="Red" title="Passionate Red"></button>
+ <button class="color-btn" style="background: linear-gradient(135deg, #fbbf24, #fcd34d);" data-color="yellow" data-color-name="Yellow" title="Cheerful Yellow"></button>
+ <button class="color-btn" style="background: linear-gradient(135deg, #9b59b6, #c084fc);" data-color="purple" data-color-name="Purple" title="Royal Purple"></button>
+ <button class="color-btn" style="background: linear-gradient(135deg, #10b981, #34d399);" data-color="green" data-color-name="Green" title="Fresh Green"></button>
+ <button class="color-btn" style="background: linear-gradient(135deg, #3b82f6, #60a5fa);" data-color="blue" data-color-name="Blue" title="Serene Blue"></button>
+ <button class="color-btn" style="background: linear-gradient(135deg, #f97316, #fb923c);" data-color="orange" data-color-name="Orange" title="Vibrant Orange"></button>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Step 3: Preview & Add to Cart -->
+ <div class="col-md-4">
+ <div class="card text-center">
+ <div class="card-body">
+ <h5>✨ Your Bouquet</h5>
+ <div id="custom-bouquet-preview">
+ <div class="preview-empty-state">
+ <i class="fas fa-hand-pointer" style="font-size: 3rem; color: #ddd; margin-bottom: 1rem;"></i>
+ <p>Select a flower and color<br>to preview your bouquet</p>
+ </div>
+ </div>
+ <button class="btn btn-rose" id="add-custom-to-cart" disabled>
+ <i class="fas fa-shopping-cart"></i> Add to Cart - $64.99
+ </button>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Gallery Section -->
+ <section class="container mx-auto px-4 py-5 my-5">
+ <h2 class="text-center section-header dancing-font display-4" style="color: var(--rose-gold);">Our Bouquet Gallery</h2>
+ <div class="row g-4">
+ <div class="col-lg-3 col-md-6">
+ <div class="gallery-item">
+ <img src="https://wallpapercave.com/wp/wp7123624.jpg" class="gallery-img" alt="Pink Rose Bouquet">
+ 
+ </div>
+ </div>
+ <div class="col-lg-3 col-md-6">
+ <div class="gallery-item">
+ <img src="https://wallpapercave.com/wp/wp7123624.jpg" class="gallery-img" alt="Mixed Flower Bouquet">
+ 
+ </div>
+ </div>
+ <div class="col-lg-3 col-md-6">
+ <div class="gallery-item">
+ <img src="https://th.bing.com/th/id/R.2d217db564a34de72341f0de88aea3c0?rik=6HyaYntbpY7huw&riu=http%3a%2f%2fwallpapercave.com%2fwp%2feRPi89Z.jpg&ehk=xFD9HLPNsnpUAHDN84Y4e4oN7enREF3ro38hOIUOuPw%3d&risl=&pid=ImgRaw&r=0" class="gallery-img" alt="Purple Flower Bouquet">
+ 
+ </div>
+ </div>
+ <div class="col-lg-3 col-md-6">
+ <div class="gallery-item">
+ <img src="https://wallpapercave.com/wp/wp7123624.jpg" class="gallery-img" alt="Red Rose Bouquet">
+ <div class="position-absolute bottom-0 start-0 w-100 p-3 text-white" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
+
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Customer Love Section -->
+ <section class="container mx-auto px-4 py-5 my-5">
+ <h2 class="text-center section-header dancing-font display-4" style="color: var(--rose-gold);">Customer Love</h2>
+ <div class="row g-4">
+ <div class="col-lg-4 col-md-6">
+ <div class="testimonial-card p-4 h-100">
+ <div class="d-flex align-items-center mb-3">
+ <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--primary-pink), var(--coral));">
+ <i class="fas fa-user text-white"></i>
+ </div>
+ <div>
+ <h5 class="fw-bold mb-0">Sophia L.</h5>
+ <p class="text-muted small">Received on Valentine's Day</p>
+ </div>
+ </div>
+ <p class="mb-0 ps-4">"The bouquet was even more beautiful in person! My partner loved it and it still looks perfect after 3 months. Best gift ever!"</p>
+ <div class="mt-3 text-warning">
+ <i class="fas fa-star"></i>
+ <i class="fas fa-star"></i>
+ <i class="fas fa-star"></i>
+ <i class="fas fa-star"></i>
+ <i class="fas fa-star"></i>
+ </div>
+ </div>
+ </div>
+ <div class="col-lg-4 col-md-6">
+ <div class="testimonial-card p-4 h-100">
+ <div class="d-flex align-items-center mb-3">
+ <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--primary-pink), var(--coral));">
+ <i class="fas fa-user text-white"></i>
+ </div>
+ <div>
+ <h5 class="fw-bold mb-0">Michael R.</h5>
+ <p class="text-muted small">Ordered for Anniversary</p>
+ </div>
+ </div>
+ <p class="mb-0 ps-4">"I was looking for something unique for our 10th anniversary. These pipe flowers are stunning and will last forever. Excellent service!"</p>
+ <div class="mt-3 text-warning">
+ <i class="fas fa-star"></i>
+ <i class="fas fa-star"></i>
+ <i class="fas fa-star"></i>
+ <i class="fas fa-star"></i>
+ <i class="fas fa-star"></i>
+ </div>
+ </div>
+ </div>
+ <div class="col-lg-4 col-md-12">
+ <div class="testimonial-card p-4 h-100">
+ <div class="d-flex align-items-center mb-3">
+ <div class="rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--primary-pink), var(--coral));">
+ <i class="fas fa-user text-white"></i>
+ </div>
+ <div>
+ <h5 class="fw-bold mb-0">Emma K.</h5>
+ <p class="text-muted small">Sent to Mother</p>
+ </div>
+ </div>
+ <p class="mb-0 ps-4">"My mom cried happy tears when she received her Mother's Day bouquet. She can't believe how real they look. Thank you, EverBloom!"</p>
+ <div class="mt-3 text-warning">
+ <i class="fas fa-star"></i>
+ <i class="fas fa-star"></i>
+ <i class="fas fa-star"></i>
+ <i class="fas fa-star"></i>
+ <i class="fas fa-star"></i>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Trust Badges Section -->
+ <section class="trust-badges py-4">
+ <div class="container text-center">
+ <div class="row g-4">
+ <div class="col-md-3 col-6">
+ <i class="fas fa-shield-alt fa-2x mb-2" style="color: #4CAF50;"></i>
+ <h6 class="fw-bold">Secure Payment</h6>
+ </div>
+ <div class="col-md-3 col-6">
+ <i class="fas fa-truck fa-2x mb-2" style="color: #2196F3;"></i>
+ <h6 class="fw-bold">Free Delivery</h6>
+ </div>
+ <div class="col-md-3 col-6">
+ <i class="fas fa-gift fa-2x mb-2" style="color: #FF9800;"></i>
+ <h6 class="fw-bold">Gift Wrapping</h6>
+ </div>
+ <div class="col-md-3 col-6">
+ <i class="fas fa-headset fa-2x mb-2" style="color: #9C27B0;"></i>
+ <h6 class="fw-bold">24/7 Support</h6>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Floating Cart Toggle -->
+ <div class="cart-toggle" id="cart-toggle">
+ <i class="fas fa-shopping-cart"></i>
+ <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-count">0</span>
+ </div>
+
+ <!-- Order Cart -->
+ <div class="cart-container shadow-lg d-none" id="order-cart">
+ <div class="p-4">
+ <div class="d-flex justify-content-between align-items-center mb-4">
+ <h4 class="fw-bold" style="color: var(--rose-gold);">
+ <i class="fas fa-shopping-bag me-2"></i> Your Order
+ </h4>
+ <button class="btn btn-sm btn-outline-secondary" id="close-cart">
+ <i class="fas fa-times"></i>
+ </button>
+ </div>
+ 
+ <div id="cart-items" class="mb-4">
+ <p class="text-center text-muted py-3">Your cart is empty. Add some beautiful bouquets!</p>
+ </div>
+ 
+ <div class="border-top pt-3">
+ <div class="d-flex justify-content-between mb-2">
+ <span>Subtotal:</span>
+ <span id="cart-subtotal">$0.00</span>
+ </div>
+ <div class="d-flex justify-content-between mb-3">
+ <span>Delivery:</span>
+ <span>$5.00</span>
+ </div>
+ <div class="d-flex justify-content-between fw-bold fs-5">
+ <span>Total:</span>
+ <span id="cart-total">$5.00</span>
+ </div>
+ 
+ <button class="btn btn-whatsapp w-100 mt-4 py-3 fs-5" id="whatsapp-order">
+ <i class="fab fa-whatsapp me-2"></i> Place Order on WhatsApp
+ </button>
+ 
+ <p class="text-center text-muted small mt-3">
+ <i class="fas fa-info-circle me-1"></i> You'll be redirected to WhatsApp to confirm your order
+ </p>
+ </div>
+ </div>
+ </div>
+
+ <!-- Footer -->
+ <footer class="py-5 mt-5" style="background: linear-gradient(135deg, #2c1a1d, #4a2b2f); color: white;">
+ <div class="container mx-auto px-4">
+ <div class="row">
+ <div class="col-lg-4 col-md-6 mb-4">
+ <h3 class="dancing-font display-5 mb-3" style="color: var(--primary-pink);">EverBloom</h3>
+ <p class="mb-4">Handcrafted pipe flower bouquets that capture eternal beauty for every special moment in your life.</p>
+ <div class="d-flex gap-3">
+ <a href="#" class="text-white fs-4"><i class="fab fa-instagram"></i></a>
+ <a href="#" class="text-white fs-4"><i class="fab fa-facebook"></i></a>
+ <a href="#" class="text-white fs-4"><i class="fab fa-pinterest"></i></a>
+ <a href="#" class="text-white fs-4"><i class="fab fa-tiktok"></i></a>
+ </div>
+ </div>
+ <div class="col-lg-4 col-md-6 mb-4">
+ <h5 class="fw-bold mb-3">Contact Us</h5>
+ <p class="mb-2">
+ <i class="fas fa-phone me-2"></i> +94 77 123 4567
+ </p>
+ <p class="mb-2">
+ <i class="fas fa-envelope me-2"></i> hello@everbloom.com
+ </p>
+ <p class="mb-4">
+ <i class="fas fa-map-marker-alt me-2"></i> 123 Flower Street, Colombo, Sri Lanka
+ </p>
+ <a href="https://wa.me/94771234567" class="btn btn-whatsapp">
+ <i class="fab fa-whatsapp me-2"></i> Chat on WhatsApp
+ </a>
+ </div>
+ <div class="col-lg-4 col-md-12 mb-4">
+ <h5 class="fw-bold mb-3">Occasions</h5>
+ <div class="row">
+ <div class="col-6">
+ <ul class="list-unstyled">
+ <li class="mb-2"><i class="fas fa-heart me-2" style="color: var(--primary-pink);"></i> Birthdays</li>
+ <li class="mb-2"><i class="fas fa-heart me-2" style="color: var(--primary-pink);"></i> Valentine's Day</li>
+ <li class="mb-2"><i class="fas fa-heart me-2" style="color: var(--primary-pink);"></i> Anniversaries</li>
+ </ul>
+ </div>
+ <div class="col-6">
+ <ul class="list-unstyled">
+ <li class="mb-2"><i class="fas fa-heart me-2" style="color: var(--primary-pink);"></i> Mother's Day</li>
+ <li class="mb-2"><i class="fas fa-heart me-2" style="color: var(--primary-pink);"></i> Weddings</li>
+ <li class="mb-2"><i class="fas fa-heart me-2" style="color: var(--primary-pink);"></i> Just Because</li>
+ </ul>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="text-center pt-4 border-top border-secondary">
+ <p class="mb-0">Made with <i class="fas fa-heart" style="color: var(--primary-pink);"></i> for special moments everywhere</p>
+ <p class="small text-muted mt-2">© 2026 EverBloom Pipe Flower Bouquets. All rights reserved.</p>
+ </div>
+ </div>
+ </footer>
+
+ <!-- JavaScript -->
+ <script>
+ // Bouquet data with original and discounted prices
+ const bouquets = {
+ valentine: [
+ { 
+ id: 1, 
+ name: "Eternal Love", 
+ originalPrice: 74.99,
+ price: 59.99,
+ description: "Deep red roses symbolizing endless passion", 
+ image: "https://images.unsplash.com/photo-1566305977571-5666677c6e98?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+ discount: 20
+ },
+ { 
+ id: 2, 
+ name: "Sweetheart's Dream", 
+ originalPrice: 62.49,
+ price: 49.99,
+ description: "Pink peonies and roses for your beloved", 
+ image: "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+ discount: 20
+ },
+ { 
+ id: 3, 
+ name: "Romantic Bliss", 
+ originalPrice: 87.49,
+ price: 69.99,
+ description: "Lavender and white roses with baby's breath", 
+ image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+ discount: 20
+ }
+ ],
+ birthday: [
+ { 
+ id: 4, 
+ name: "Joyful Celebration", 
+ originalPrice: 44.99,
+ price: 44.99,
+ description: "Bright sunflowers and daisies for happiness", 
+ image: "https://www.pixelstalk.net/wp-content/uploads/images2/Beautiful-Rose-Wallpaper-Desktop.jpg",
+ discount: 0
+ },
+ { 
+ id: 5, 
+ name: "Vibrant Wishes", 
+ originalPrice: 54.99,
+ price: 54.99,
+ description: "Colorful mixed bouquet for a special day", 
+ image: "https://images.unsplash.com/photo-1516048015710-7a3b4c86be43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+ discount: 0
+ },
+ { 
+ id: 6, 
+ name: "Golden Years", 
+ originalPrice: 64.99,
+ price: 64.99,
+ description: "Elegant yellow roses and lilies", 
+ image: "https://images.unsplash.com/photo-1572453800999-e8d2d1589b7c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+ discount: 0
+ }
+ ],
+ anniversary: [
+ { 
+ id: 7, 
+ name: "Timeless Love", 
+ originalPrice: 79.99,
+ price: 79.99,
+ description: "White roses and orchids for eternal commitment", 
+ image: "https://images.unsplash.com/photo-1563178406-4cd7c3cfb63a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+ discount: 0
+ },
+ { 
+ id: 8, 
+ name: "Silver Memories", 
+ originalPrice: 89.99,
+ price: 89.99,
+ description: "Silver-themed bouquet with eucalyptus", 
+ image: "https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+ discount: 0
+ },
+ { 
+ id: 9, 
+ name: "Golden Together", 
+ originalPrice: 99.99,
+ price: 99.99,
+ description: "Gold-accented roses for milestone celebrations", 
+ image: "https://images.unsplash.com/photo-1566305977571-5666677c6e98?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+ discount: 0
+ }
+ ],
+ mothersday: [
+ { 
+ id: 10, 
+ name: "Mother's Grace", 
+ originalPrice: 49.99,
+ price: 49.99,
+ description: "Soft pink roses symbolizing a mother's love", 
+ image: "https://images.unsplash.com/photo-1516048015710-7a3b4c86be43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+ discount: 0
+ },
+ { 
+ id: 11, 
+ name: "Thank You, Mom", 
+ originalPrice: 59.99,
+ price: 59.99,
+ description: "Lilies and carnations in a heart arrangement", 
+ image: "https://images.unsplash.com/photo-1563178406-4cd7c3cfb63a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+ discount: 0
+ },
+ { 
+ id: 12, 
+ name: "Unconditional Love", 
+ originalPrice: 69.99,
+ price: 69.99,
+ description: "Mixed pastel bouquet with a personal card", 
+ image: "https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+ discount: 0
+ }
+ ],
+ surprise: [
+ { 
+ id: 13, 
+ name: "Unexpected Joy", 
+ originalPrice: 39.99,
+ price: 39.99,
+ description: "Bright, cheerful flowers to surprise someone", 
+ image: "https://images.unsplash.com/photo-1464207687429-7505649dae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+ discount: 0
+ },
+ { 
+ id: 14, 
+ name: "Just Because", 
+ originalPrice: 44.99,
+ price: 44.99,
+ description: "Simple yet beautiful bouquet for any day", 
+ image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+ discount: 0
+ },
+ { 
+ id: 15, 
+ name: "Smile Maker", 
+ originalPrice: 34.99,
+ price: 34.99,
+ description: "Colorful wildflowers to brighten their day", 
+ image: "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+ discount: 0
+ }
+ ]
+ };
+
+ // Shopping cart
+ let cart = [];
+ let isValentineTheme = false;
+ 
+ // Custom Bouquet Builder State
+ let customBouquet = {
+ flower: null,
+ flowerEmoji: null,
+ color: null,
+ colorName: null
+ };
+
+ // Create floating petals
+ function createFloatingPetals() {
+ const petalImages = ['🌸', '🌺', '🌼', '🌻', '🌷', '🌹', '💐', '🏵️', '💮'];
+ 
+ // Create 15 petals
+ for (let i = 0; i < 5; i++) {
+ setTimeout(() => {
+ const petal = document.createElement('div');
+ petal.className = 'petal';
+ 
+ const size = Math.random() * 25 + 15;
+ const startX = Math.random() * 100;
+ const duration = Math.random() * 20 + 10;
+ const delay = Math.random() * 5;
+ const opacity = Math.random() * 0.5 + 0.3;
+ const emoji = petalImages[Math.floor(Math.random() * petalImages.length)];
+ 
+ petal.style.width = `${size}px`;
+ petal.style.height = `${size}px`;
+ petal.style.left = `${startX}vw`;
+ petal.style.top = '-30px';
+ petal.style.opacity = opacity;
+ petal.style.fontSize = `${size}px`;
+ petal.style.textAlign = 'center';
+ petal.style.lineHeight = '1';
+ petal.innerHTML = emoji;
+ 
+ petal.style.animation = `float ${duration}s ease-in ${delay}s infinite`;
+ 
+ document.body.appendChild(petal);
+ 
+ setTimeout(() => {
+ if (petal.parentNode) {
+ petal.parentNode.removeChild(petal);
+ }
+ }, (duration + delay) * 1000);
+ }, i * 300);
+ }
+ 
+ setInterval(createFloatingPetals, 30000);
+ }
+ 
+ // Add CSS for floating animation
+ function addPetalAnimationCSS() {
+ const style = document.createElement('style');
+ style.textContent = `
+ @keyframes float {
+ 0% {
+ transform: translateY(0) rotate(0deg) translateX(0);
+ opacity: 0.7;
+ }
+ 25% {
+ transform: translateY(20vh) rotate(90deg) translateX(10vw);
+ }
+ 50% {
+ transform: translateY(40vh) rotate(180deg) translateX(-5vw);
+ opacity: 0.9;
+ }
+ 75% {
+ transform: translateY(60vh) rotate(270deg) translateX(8vw);
+ }
+ 100% {
+ transform: translateY(100vh) rotate(360deg) translateX(0);
+ opacity: 0;
+ }
+ }
+ `;
+ document.head.appendChild(style);
+ }
+ 
+ // Toggle Valentine Theme
+ function toggleValentineTheme() {
+ isValentineTheme = !isValentineTheme;
+ document.body.classList.toggle('valentine-theme', isValentineTheme);
+ 
+ const themeToggle = document.getElementById('theme-toggle');
+ if (isValentineTheme) {
+ themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+ themeToggle.title = 'Switch to Light Theme';
+ themeToggle.style.background = 'linear-gradient(135deg, #ffcc33, #ff9900)';
+ } else {
+ themeToggle.innerHTML = '<i class="fas fa-heart"></i>';
+ themeToggle.title = 'Switch to Valentine Theme';
+ themeToggle.style.background = 'linear-gradient(135deg, #ff7b9c, #e63946)';
+ }
+ }
+
+ // Render bouquets for each occasion
+ function renderBouquets() {
+ for (const occasion in bouquets) {
+ const containerId = `${occasion}-bouquets`;
+ const container = document.getElementById(containerId);
+ 
+ if (container) {
+ container.innerHTML = bouquets[occasion].map(bouquet => `
+ <div class="col-lg-4 col-md-6">
+ <div class="bouquet-card h-100">
+ <div class="position-relative overflow-hidden">
+ <img src="${bouquet.image}" class="bouquet-img" alt="${bouquet.name}">
+ ${bouquet.discount > 0 ? `<div class="discount-badge">${bouquet.discount}% OFF</div>` : ''}
+ <div class="position-absolute top-0 end-0 m-3">
+ ${bouquet.discount > 0 ? 
+ `<div class="text-end">
+ <span class="original-price">$${bouquet.originalPrice.toFixed(2)}</span>
+ <span class="discounted-price d-block">$${bouquet.price.toFixed(2)}</span>
+ </div>` : 
+ `<span class="badge bg-white text-dark p-2">$${bouquet.price.toFixed(2)}</span>`
+ }
+ </div>
+ </div>
+ <div class="p-4">
+ <h5 class="fw-bold">${bouquet.name}</h5>
+ <p class="text-muted small mb-3">${bouquet.description}</p>
+ <div class="d-flex justify-content-between align-items-center mb-3">
+ <div class="d-flex align-items-center">
+ <button class="btn btn-sm btn-outline-secondary rounded-circle" onclick="decreaseQuantity(${bouquet.id})" style="width: 36px; height: 36px;">-</button>
+ <span class="mx-3 fw-bold" id="qty-${bouquet.id}">0</span>
+ <button class="btn btn-sm btn-outline-secondary rounded-circle" onclick="increaseQuantity(${bouquet.id})" style="width: 36px; height: 36px;">+</button>
+ </div>
+ <button class="btn btn-rose py-2 px-4" onclick="addToCart(${bouquet.id})">
+ <i class="fas fa-plus me-2"></i> Add to Order
+ </button>
+ </div>
+ </div>
+ </div>
+ </div>
+ `).join('');
+ }
+ }
+ }
+ 
+ // Cart functionality
+ function addToCart(bouquetId) {
+ let foundBouquet = null;
+ for (const occasion in bouquets) {
+ const bouquet = bouquets[occasion].find(b => b.id === bouquetId);
+ if (bouquet) {
+ foundBouquet = bouquet;
+ break;
+ }
+ }
+ 
+ if (!foundBouquet) return;
+ 
+ const existingItem = cart.find(item => item.id === bouquetId);
+ 
+ if (existingItem) {
+ existingItem.quantity += 1;
+ } else {
+ cart.push({
+ id: foundBouquet.id,
+ name: foundBouquet.name,
+ price: foundBouquet.price,
+ originalPrice: foundBouquet.originalPrice,
+ discount: foundBouquet.discount,
+ quantity: 1
+ });
+ }
+ 
+ updateQuantityDisplay(bouquetId);
+ updateCart();
+ showCartNotification();
+ }
+ 
+ function increaseQuantity(bouquetId) {
+ const item = cart.find(item => item.id === bouquetId);
+ if (item) {
+ item.quantity += 1;
+ } else {
+ addToCart(bouquetId);
+ return;
+ }
+ 
+ updateQuantityDisplay(bouquetId);
+ updateCart();
+ }
+ 
+ function decreaseQuantity(bouquetId) {
+ const itemIndex = cart.findIndex(item => item.id === bouquetId);
+ 
+ if (itemIndex !== -1) {
+ if (cart[itemIndex].quantity > 1) {
+ cart[itemIndex].quantity -= 1;
+ } else {
+ cart.splice(itemIndex, 1);
+ }
+ 
+ updateQuantityDisplay(bouquetId);
+ updateCart();
+ }
+ }
+ 
+ function updateQuantityDisplay(bouquetId) {
+ const item = cart.find(item => item.id === bouquetId);
+ const qtyElement = document.getElementById(`qty-${bouquetId}`);
+ if (qtyElement) {
+ qtyElement.textContent = item ? item.quantity : 0;
+ }
+ }
+
+ function updateCart() {
+ const cartItems = document.getElementById('cart-items');
+ const cartCount = document.getElementById('cart-count');
+ const cartSubtotal = document.getElementById('cart-subtotal');
+ const cartTotal = document.getElementById('cart-total');
+ 
+ const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+ cartCount.textContent = totalItems;
+ 
+ if (cart.length === 0) {
+ cartItems.innerHTML = '<p class="text-center text-muted py-3">Your cart is empty. Add some beautiful bouquets!</p>';
+ cartSubtotal.textContent = '$0.00';
+ cartTotal.textContent = '$5.00';
+ return;
+ }
+ 
+ const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+ const total = subtotal + 5.00;
+ 
+ cartItems.innerHTML = cart.map(item => `
+ <div class="d-flex justify-content-between align-items-center mb-3 pb-3 border-bottom">
+ <div>
+ <h6 class="fw-bold mb-1">${item.name}</h6>
+ <div class="small text-muted mb-0">
+ ${item.discount > 0 ? 
+ `<span class="original-price">$${item.originalPrice.toFixed(2)}</span>
+ <span class="discounted-price">$${item.price.toFixed(2)} each</span>
+ <span class="badge bg-danger ms-2">${item.discount}% OFF</span>` : 
+ `$${item.price.toFixed(2)} each`
+ }
+ </div>
+ </div>
+ <div class="d-flex align-items-center">
+ <button class="btn btn-sm btn-outline-secondary rounded-circle" onclick="decreaseQuantity(${item.id})" style="width: 30px; height: 30px;">-</button>
+ <span class="mx-2 fw-bold">${item.quantity}</span>
+ <button class="btn btn-sm btn-outline-secondary rounded-circle" onclick="increaseQuantity(${item.id})" style="width: 30px; height: 30px;">+</button>
+ <span class="ms-3 fw-bold" style="color: var(--rose-gold);">$${(item.price * item.quantity).toFixed(2)}</span>
+ </div>
+ </div>
+ `).join('');
+ 
+ const totalSavings = cart.reduce((sum, item) => {
+ if (item.discount > 0) {
+ return sum + ((item.originalPrice - item.price) * item.quantity);
+ }
+ return sum;
+ }, 0);
+ 
+ if (totalSavings > 0) {
+ cartItems.innerHTML += `
+ <div class="d-flex justify-content-between align-items-center mb-2">
+ <span class="text-success small">
+ <i class="fas fa-tag me-1"></i> Total Savings:
+ </span>
+ <span class="text-success fw-bold">$${totalSavings.toFixed(2)}</span>
+ </div>
+ `;
+ }
+ 
+ cartSubtotal.textContent = `$${subtotal.toFixed(2)}`;
+ cartTotal.textContent = `$${total.toFixed(2)}`;
+ }
+ 
+ function showCartNotification() {
+ const cartCount = document.getElementById('cart-count');
+ cartCount.classList.add('animate__animated', 'animate__bounce');
+ setTimeout(() => {
+ cartCount.classList.remove('animate__animated', 'animate__bounce');
+ }, 1000);
+ }
+ 
+ // WhatsApp order function
+ function placeWhatsAppOrder() {
+ if (cart.length === 0) {
+ alert('Please add some bouquets to your order first!');
+ return;
+ }
+ 
+ const phoneNumber = "94707554478";
+ 
+ let message = "🌹 My EverBloom Bouquet Order:%0A%0A";
+ let subtotal = 0;
+ let totalSavings = 0;
+ 
+ cart.forEach(item => {
+ const itemTotal = item.price * item.quantity;
+ subtotal += itemTotal;
+ 
+ if (item.discount > 0) {
+ totalSavings += (item.originalPrice - item.price) * item.quantity;
+ }
+ 
+ message += `• ${item.name} x${item.quantity} - $${itemTotal.toFixed(2)}`;
+ if (item.discount > 0) {
+ message += ` (${item.discount}% OFF)`;
+ }
+ message += `%0A`;
+ });
+ 
+ const deliveryFee = 5.00;
+ const total = subtotal + deliveryFee;
+ 
+ message += `%0ASubtotal: $${subtotal.toFixed(2)}%0A`;
+ 
+ if (totalSavings > 0) {
+ message += `💰 Total Savings: $${totalSavings.toFixed(2)}%0A`;
+ }
+ 
+ message += `🚚 Delivery: $${deliveryFee.toFixed(2)}%0A`;
+ message += `💵 Total: $${total.toFixed(2)}%0A%0A`;
+ message += `Please confirm availability and delivery time. Thank you! 🌸`;
+ 
+ window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+ }
+
+ // ========== CUSTOM BOUQUET BUILDER FUNCTIONS - FIXED ==========
+ 
+ function initCustomBouquetBuilder() {
+ const flowerButtons = document.querySelectorAll('[data-flower]');
+ const colorButtons = document.querySelectorAll('[data-color]');
+ const preview = document.getElementById('custom-bouquet-preview');
+ const addToCartBtn = document.getElementById('add-custom-to-cart');
+ 
+ // Flower selection
+ flowerButtons.forEach(btn => {
+ btn.addEventListener('click', function() {
+ // Remove active class from all flower buttons
+ flowerButtons.forEach(b => b.classList.remove('active'));
+ 
+ // Add active class to clicked button
+ this.classList.add('active');
+ 
+ // Update custom bouquet state
+ customBouquet.flower = this.dataset.flower;
+ customBouquet.flowerEmoji = this.dataset.emoji;
+ 
+ // Update preview
+ updateCustomBouquetPreview();
+ });
+ });
+ 
+ // Color selection
+ colorButtons.forEach(btn => {
+ btn.addEventListener('click', function() {
+ // Remove active class from all color buttons
+ colorButtons.forEach(b => b.classList.remove('active'));
+ 
+ // Add active class to clicked button
+ this.classList.add('active');
+ 
+ // Update custom bouquet state
+ customBouquet.color = this.dataset.color;
+ customBouquet.colorName = this.dataset.colorName;
+ 
+ // Update preview
+ updateCustomBouquetPreview();
+ });
+ });
+ 
+ // Add to cart button
+ addToCartBtn.addEventListener('click', function() {
+ if (!customBouquet.flower || !customBouquet.color) {
+ alert('Please select both a flower type and color! 🌸');
+ return;
+ }
+ 
+ // Create custom bouquet item for cart
+ const customBouquetItem = {
+ id: `custom-${Date.now()}`, // Unique ID
+ name: `Custom ${customBouquet.colorName} ${customBouquet.flower.charAt(0).toUpperCase() + customBouquet.flower.slice(1)} Bouquet`,
+ price: 64.99,
+ originalPrice: 64.99,
+ discount: 0,
+ quantity: 1,
+ isCustom: true
+ };
+ 
+ // Add to cart
+ cart.push(customBouquetItem);
+ updateCart();
+ showCartNotification();
+ 
+ // Show success message
+ alert(`✨ Your custom ${customBouquet.colorName} ${customBouquet.flower} bouquet has been added to cart!`);
+ 
+ // Optional: Reset builder
+ resetCustomBouquetBuilder();
+ });
+ }
+ 
+ function updateCustomBouquetPreview() {
+ const preview = document.getElementById('custom-bouquet-preview');
+ const addToCartBtn = document.getElementById('add-custom-to-cart');
+ 
+ if (!customBouquet.flower && !customBouquet.color) {
+ // Empty state
+ preview.classList.remove('has-selection');
+ preview.innerHTML = `
+ <div class="preview-empty-state">
+ <i class="fas fa-hand-pointer" style="font-size: 3rem; color: #ddd; margin-bottom: 1rem;"></i>
+ <p>Select a flower and color<br>to preview your bouquet</p>
+ </div>
+ `;
+ addToCartBtn.disabled = true;
+ return;
+ }
+ 
+ // Build preview content
+ preview.classList.add('has-selection');
+ 
+ const flowerDisplay = customBouquet.flowerEmoji || '🌸';
+ const colorInfo = customBouquet.colorName ? customBouquet.colorName : 'Custom';
+ const flowerInfo = customBouquet.flower ? customBouquet.flower.charAt(0).toUpperCase() + customBouquet.flower.slice(1) : 'Flower';
+ 
+ preview.innerHTML = `
+ <div class="bouquet-icon">${flowerDisplay} ${flowerDisplay} ${flowerDisplay}</div>
+ <div class="bouquet-name">${colorInfo} ${flowerInfo}</div>
+ <div class="bouquet-details">Handcrafted custom bouquet</div>
+ <div class="bouquet-price">$64.99</div>
+ `;
+ 
+ // Enable add to cart button if both selections are made
+ if (customBouquet.flower && customBouquet.color) {
+ addToCartBtn.disabled = false;
+ } else {
+ addToCartBtn.disabled = true;
+ }
+ }
+ 
+ function resetCustomBouquetBuilder() {
+ // Reset state
+ customBouquet = {
+ flower: null,
+ flowerEmoji: null,
+ color: null,
+ colorName: null
+ };
+ 
+ // Remove active classes
+ document.querySelectorAll('[data-flower]').forEach(btn => btn.classList.remove('active'));
+ document.querySelectorAll('[data-color]').forEach(btn => btn.classList.remove('active'));
+ 
+ // Reset preview
+ updateCustomBouquetPreview();
+ }
+ 
+ // Toggle cart visibility
+ document.getElementById('cart-toggle').addEventListener('click', function() {
+ const cart = document.getElementById('order-cart');
+ cart.classList.toggle('d-none');
+ });
+ 
+ document.getElementById('close-cart').addEventListener('click', function() {
+ document.getElementById('order-cart').classList.add('d-none');
+ });
+ 
+ // WhatsApp order buttons
+ document.getElementById('whatsapp-order').addEventListener('click', placeWhatsAppOrder);
+ document.getElementById('whatsapp-hero').addEventListener('click', function(e) {
+ e.preventDefault();
+ if (cart.length === 0) {
+ window.open('https://wa.me/94707554478?text=Hello! I\'d like to order a bouquet from EverBloom.', '_blank');
+ } else {
+ placeWhatsAppOrder();
+ }
+ });
+ 
+ // Theme toggle button
+ document.getElementById('theme-toggle').addEventListener('click', toggleValentineTheme);
+ 
+ // Initialize the page
+ document.addEventListener('DOMContentLoaded', function() {
+ addPetalAnimationCSS();
+ createFloatingPetals();
+ renderBouquets();
+ updateCart();
+ 
+ // Initialize custom bouquet builder
+ initCustomBouquetBuilder();
+ 
+ // Add smooth scrolling for anchor links
+ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+ anchor.addEventListener('click', function(e) {
+ e.preventDefault();
+ const targetId = this.getAttribute('href');
+ if (targetId === '#') return;
+ 
+ const targetElement = document.querySelector(targetId);
+ if (targetElement) {
+ window.scrollTo({
+ top: targetElement.offsetTop - 80,
+ behavior: 'smooth'
+ });
+ 
+ document.getElementById('order-cart').classList.add('d-none');
+ }
+ });
+ });
+ });
+ </script>
+
+ <!-- Bootstrap JS Bundle -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
